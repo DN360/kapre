@@ -1,3 +1,17 @@
+# 注意
+
+- `setup.py`に`librosa`が入っていたのを削除しています
+  - 理由は `pipenv` で動かなかったから
+  - `pipenv` で仮想環境に入っているときに `python setup.py install` をすると、`numba` の高速化の部分でファイルがないなどのバグが発生する
+- そのため、これを使って `kapre` をインストールした場合は `librosa` を別途 `pipenv` でインストールしてください
+
+## 例
+
+```
+pipenv install librosa==0.7.2
+pipenv install numba==0.48
+```
+
 # kapre
 Keras Audio Preprocessors
 
