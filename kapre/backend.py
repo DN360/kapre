@@ -169,12 +169,12 @@ def get_stft_kernels(n_dft, keras_ver='new'):
     assert n_dft > 1 and ((n_dft & (n_dft - 1)) == 0), \
         ('n_dft should be > 1 and power of 2, but n_dft == %d' % n_dft)
 
-    nb_filter = n_dft / 2 + 1
+    nb_filter = (int)n_dft / 2 + 1
     dtype = K.floatx()
 
     # prepare DFT filters
     timesteps = range(n_dft)
-    w_ks = [(2 * np.pi * k) / float(n_dft) for k in xrange(n_dft)]
+    w_ks = [(2 * np.pi * k) / float(n_dft) for k in range(n_dft)]
     dft_real_kernels = np.array([[np.cos(w_k * n) for n in timesteps]
                                  for w_k in w_ks])
     dft_imag_kernels = np.array([[np.sin(w_k * n) for n in timesteps]

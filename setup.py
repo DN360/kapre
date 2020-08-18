@@ -11,7 +11,7 @@ setup(name='kapre',
       install_requires=[
         'keras >= 1.0.0', 
         'numpy >= 1.8.0',
-        'librosa >= 0.4',
+        'librosa == 0.7.2',
         'pandas',
       ],
       keywords='audio music deep learning keras',
